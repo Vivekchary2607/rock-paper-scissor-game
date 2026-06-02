@@ -1,88 +1,141 @@
-*{
+/* --- Base Reset & Typography --- */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
     background-color: cornflowerblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-}
-.container {
-    height: 70vh;
+    color: white;
+    padding: 2rem 1rem;
+    min-height: 100vh;
     display: flex;
-    
     justify-content: center;
     align-items: center;
 }
-.game {
-    height: 65vmin;
-    width: 60vmin;
+
+main {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Choices Buttons Section --- */
+.choices-container {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
-    gap: 1.5vmin;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
 }
 
 .box {
-    height: 18vmin;
-    width: 18vmin;
+    flex: 1;
+    max-width: 150px;
+    padding: 1rem;
     border-radius: 1rem;
     border: none;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background-color: burlywood;
-}
-
-#image {
-    height: 18vmin;
-    width: 18vmin;
-}
-
-#imagee {
-    height: 18vmin;
-    width: 18vmin;
-}
-
-#image:hover{
-    background-color: cornsilk;
-    border-radius: 1rem;
     cursor: pointer;
-}
-.player{
-    display: inline-block;
-    text-align: center;
-    margin: 10px;
-    border: 1rem;
-    border-color: cornsilk;
-    gap:2rem;
-}
-.player p{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
     font-weight: bold;
-    margin-top: 5px;
-    color: white;
+    color: #333;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.box:hover {
+    background-color: cornsilk;
+    transform: translateY(-5px);
+}
+
+.choice-img {
+    width: 100%;
+    max-width: 80px;
+    height: auto;
+}
+
+/* --- Versus Avatars Section --- */
+.vs-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar-img {
+    width: 90px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.player p {
+    font-weight: bold;
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.vs-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: yellow;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* --- Scoreboard --- */
+#score {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .scoreboard {
     display: flex;
     justify-content: center;
-    text-align: center;
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 20px;
+    align-items: center;
+    font-size: 1.8rem;
+    margin: 0.5rem 0 2rem 0;
+}
+
+.score-box p {
+    font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .scoreboard .divider {
-    margin: 0 20px;
-    font-size: 2rem;
+    margin: 0 30px;
+    font-size: 2.5rem;
     color: yellow;
 }
-h1{
-    background-color: #f75e11;
-    color: #fff;
-    height: 5rem;
-    line-height: 5rem;
-    margin-bottom: 0.5rem;
-}
-.msg-container{
+
+/* --- Message Banner --- */
+.msg-container {
+    margin-bottom: 2.5rem;
+    min-height: 70px; /* Prevents layout shifting when text updates */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,31 +143,76 @@ h1{
 
 #msg {
     background-color: rgb(11, 115, 122);
-    color: white;
-    font-size: 2rem;
-    display: inline;
-    padding: 1rem;
-    border-radius: 1rem;
-}
-#score{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 2rem;
-    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: inline-block;
+    max-width: 90%;
 }
 
+/* --- Reset Button --- */
 #reset-btn {
-    padding: 1rem;
-    font-size: 1.25rem;
+    padding: 0.8rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
     background-color: darkviolet;
     color: #fff;
-    border-radius: 1rem;
+    border-radius: 2rem;
     border: none;
-    
-    
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.2s, transform 0.2s;
 }
+
 #reset-btn:hover {
     background-color: mediumblue;
     transform: scale(1.05);
+}
+
+/* --- Mobile Responsiveness (Screens under 600px) --- */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .choices-container {
+        gap: 0.8rem;
+    }
+
+    .box {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .choice-img {
+        max-width: 55px;
+    }
+
+    .vs-container {
+        gap: 1.5rem;
+    }
+
+    .avatar-img {
+        width: 70px;
+    }
+
+    .scoreboard {
+        font-size: 1.4rem;
+    }
+    
+    .score-box p {
+        font-size: 2rem;
+    }
+
+    #msg {
+        font-size: 1.1rem;
+        padding: 0.8rem 1.2rem;
+    }
 }
