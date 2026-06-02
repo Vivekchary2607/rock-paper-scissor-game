@@ -3,38 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock-Paper-Scissor</title>
+    <title>Rock-Paper-Scissors</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main >
-        <h1>Rock Paper Scissor</h1>
-        <img src="title.png" width="600px" height="150px">
-        <div class="container">
-            <div class="game">
-                <button class="box" id="rock"><img id="image" src="rock.png" alt="Rock">Rock</button>
-                <button class="box" id="paper"><img id="image" src="paper.png" alt="Paper">Paper</button>
-                <button class="box" id="scissor"><img id="image" src="scissor.png" alt="Scissor">Scissor</button>
-                <div class="player">
-                <img id="imagee" src="Human.png" alt="Human">
-                <!-- <p>Human</p> -->
-                </div>
-                <div class="player">
-                <img id="imagee" src="Robot.png" alt="Human">
-                <!-- <p>Computer</p> -->
-                </div>
-                <p id="score">ScoreCard</p>
-                <div class="scoreboard">
-                    <div >Human<p id="human-score"> 0</p> </div>
-                    <div class="divider">|</div>
-                    <div >Computer<p id="Computer-score">0</p></div>
-                </div>
-                <div class="msg-container">
-                    <p id="msg"> Play Your Move</p>
-                </div>
+    <main>
+        <h1>Rock Paper Scissors</h1>
+        
+        <div class="choices-container">
+            <button class="box" id="rock">
+                <img class="choice-img" src="rock.png" alt="Rock">
+                <span>Rock</span>
+            </button>
+            <button class="box" id="paper">
+                <img class="choice-img" src="paper.png" alt="Paper">
+                <span>Paper</span>
+            </button>
+            <button class="box" id="scissor">
+                <img class="choice-img" src="scissor.png" alt="Scissor">
+                <span>Scissor</span>
+            </button>
+        </div>
+
+        <div class="vs-container">
+            <div class="player">
+                <img class="avatar-img" src="Human.png" alt="Human">
+                <p>Human</p>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="player">
+                <img class="avatar-img" src="Robot.png" alt="Computer">
+                <p>Computer</p>
             </div>
         </div>
-        <button id="reset-btn"> Reset</button>
+
+        <h2 id="score">Scoreboard</h2>
+        <div class="scoreboard">
+            <div class="score-box">Human<p id="human-score">0</p></div>
+            <div class="divider">|</div>
+            <div class="score-box">Computer<p id="Computer-score">0</p></div>
+        </div>
+
+        <div class="msg-container">
+            <p id="msg">Play Your Move</p>
+        </div>
+
+        <button id="reset-btn">Reset</button>
     </main>
     <script src="app.js"></script>
 </body>
