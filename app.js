@@ -21,7 +21,10 @@ const drawGame=()=>{
 const resetGame=()=>{
     userscore=0;
     compscore=0;
-
+    userscorepara.innerText = "0";
+    compscorepara.innerText = "0";
+    msg.innerText = "Play Your Move";
+    msg.style.backgroundColor = "rgb(11, 115, 122)";
 };
 
 
