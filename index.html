@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Rock Paper Scissors</h1>
+        
+        <div class="choices-container">
+            <button class="box" id="rock">
+                <img class="choice-img" src="images/rock.png" alt="Rock">
+                <span>Rock</span>
+            </button>
+            <button class="box" id="paper">
+                <img class="choice-img" src="images/paper.png" alt="Paper">
+                <span>Paper</span>
+            </button>
+            <button class="box" id="scissor">
+                <img class="choice-img" src="images/scissor.png" alt="Scissor">
+                <span>Scissor</span>
+            </button>
+        </div>
+
+        <div class="vs-container">
+            <div class="player">
+                <img class="avatar-img" src="images/Human.png" alt="Human">
+                <p>Human</p>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="player">
+                <img class="avatar-img" src="images/Robot.png" alt="Computer">
+                <p>Computer</p>
+            </div>
+        </div>
+
+        <h2 id="score">Scoreboard</h2>
+        <div class="scoreboard">
+            <div class="score-box">Human<p id="human-score">0</p></div>
+            <div class="divider">|</div>
+            <div class="score-box">Computer<p id="Computer-score">0</p></div>
+        </div>
+
+        <div class="msg-container">
+            <p id="msg">Play Your Move</p>
+        </div>
+
+        <button id="reset-btn">Reset</button>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
